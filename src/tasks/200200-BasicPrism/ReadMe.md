@@ -45,3 +45,19 @@ protected override void RegisterTypes(IContainerRegistry containerRegistry)
 ```
 - Finally since we are no longer using MainWindow.xaml, simply remove the xaml and cs file.
 - Also remove Views and ViewModels folders to the app.
+
+- Use Visual Studio 2022 to create a new ShellWindow. Just a regular Wpf window and name it ShellWindow. Add some content to show some stuff in there.
+
+
+```cs
+protected override Window CreateShell()
+{
+    return Container.Resolve<ShellWindow>();
+}
+protected override void RegisterTypes(IContainerRegistry containerRegistry)
+{
+
+}
+```
+
+- Now run, the app 

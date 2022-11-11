@@ -1,4 +1,5 @@
-﻿using Prism.DryIoc;
+﻿using BasicPrism.Views;
+using Prism.DryIoc;
 using Prism.Ioc;
 using System.Windows;
 
@@ -11,12 +12,12 @@ namespace BasicPrism
     {
         protected override Window CreateShell()
         {
-            throw new System.NotImplementedException();
+            return Container.Resolve<ShellWindow>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

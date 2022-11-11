@@ -26,4 +26,10 @@ dotnet run BasicPrism.csproj
 dotnet add package Prism.DryIoc --version 8.1.97
 
 mkdir Views
+
+# Just a marker file so that Visual Studio 2022 will recognize fthe folder.
+New-Item .\Views\SomeMarkerFile.cs
+
 mkdir ViewModels
+
+New-Item .\ViewModels\SomeMarkerFile.cs
