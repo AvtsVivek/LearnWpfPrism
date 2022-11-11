@@ -6,7 +6,7 @@ cd src/apps/200200-BasicPrism
 
 dotnet new sln --name BasicPrism 
 
-dotnet new wpf --name BasicPrism --framework net6.0
+dotnet new wpf --name BasicPrism --framework net7.0
 
 Copy-Item ./BasicPrism/* . -Recurse
 
