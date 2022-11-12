@@ -10,7 +10,7 @@
   - Used for Region Navigation.
   - Define and create Regions in the prism app.
 
-- Creates a basic Wpf app and then adds Prism to it.
+- This example builds on the previous example 200200-BasicPrism
 
 - The following code creates a region in the shell.
 ```xml
