@@ -21,6 +21,7 @@ to
 - Prism does not provide an adapter for STackPanel, so we need to create a custom adapter.
 - Without that custom adapter which can handle a stack panel region, an exception will be thrown, the simply would not run.
 - So create a class StackPanelRegionAdapter and override Adapt and CreateRegion methods.
+- The Adapt method is where we add the view to the region, via the adapter. So the adpater is the intermediary. 
 - In the App.xaml.cs override ConfigureRegionAdapterMappings method.
 
 ```cs
@@ -31,4 +32,5 @@ protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings reg
 }
 ```
 - Basically with the above code, we are letting know of the prism about the stackpanel adapter that we created. In other words we are regitering the new adapter with the prism infrastructure. 
-- With these two additions, if you now run, there would not be any excption. 
+- With these two additions, if you now run, there would be an excption. Comment out the above method ConfigureRegionAdapterMappings and run to see the exception. 
+- 

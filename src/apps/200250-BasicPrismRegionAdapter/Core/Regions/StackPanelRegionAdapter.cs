@@ -19,14 +19,14 @@ public class StackPanelRegionAdapter : RegionAdapterBase<StackPanel>
         {
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
-                foreach (FrameworkElement element in e.NewItems)
+                foreach (FrameworkElement element in e.NewItems!)
                 {
                     regionTarget.Children.Add(element);
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
-                foreach (FrameworkElement element in e.OldItems)
+                foreach (FrameworkElement element in e.OldItems!)
                 {
                     regionTarget.Children.Remove(element);
                 }
