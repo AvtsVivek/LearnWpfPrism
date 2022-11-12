@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="ShellWindow" Height="450" Width="800">
     <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        <StackPanel prism:RegionManager.RegionName="StackPanelRegion" />
     </Grid>
 </Window>

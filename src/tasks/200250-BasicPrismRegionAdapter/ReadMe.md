@@ -1,27 +1,34 @@
 # Basic Prism App
-- Introduces Regions in Prism App
-- Placeholder for dynamic content. 
-- A wpf app has multiple regions into which wpf controls are injected at run time.
-- Region Manager. 
-  - It manages regions. 
-  - It hold all of the regions in the application.
-  - Provides access to the region
-  - Used for view composition
-  - Used for Region Navigation.
-  - Define and create Regions in the prism app.
 
-- This example builds on the previous example 200200-BasicPrism
+- This example builds on the previous example 200225-BasicPrismRegion.
+- This creats an region adapter for Stack Panel control. 
+- We need to create this adapter because for other controls prism provides adapters such as ContentControlRegionAdapter, ItemsControlRegionAdapter and SelectorRegionAdapter. So SelectorRegionAdapter is for ComboBox, ListBox, Ribbon, TabControl 
 
-- The following code creates a region in the shell.
-```xml
+- This example builds a custom adapter for a StackPanel control. 
+
+- First chaange the contentControl Region to stack panel region
+
+```
 <ContentControl prism:RegionManager.RegionName="ContentRegion" />
 ```
 
-And add the required namespace.
+to
 
-```xml
-xmlns:prism="http://prismlibrary.com/"
+```
+<StackPanel prism:RegionManager.RegionName="StackPanelRegion" />
 ```
 
-- So by this, the ContentControl becomes a prism region.
-- Note that a View is not Yet injected into the region. 
+- Prism does not provide an adapter for STackPanel, so we need to create a custom adapter.
+- Without that custom adapter which can handle a stack panel region, an exception will be thrown, the simply would not run.
+- So create a class StackPanelRegionAdapter and override Adapt and CreateRegion methods.
+- In the App.xaml.cs override ConfigureRegionAdapterMappings method.
+
+```cs
+protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
+{
+    base.ConfigureRegionAdapterMappings(regionAdapterMappings);
+    regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
+}
+```
+- Basically with the above code, we are letting know of the prism about the stackpanel adapter that we created. In other words we are regitering the new adapter with the prism infrastructure. 
+- With these two additions, if you now run, there would not be any excption. 
