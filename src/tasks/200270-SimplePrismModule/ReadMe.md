@@ -31,4 +31,13 @@ public class ModuleAModule : IModule
 ```
 
 - Now add reference to the module class library. 
+- The module is registered as follows.
+```cs
+protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+{
+    Debugger.Break();
+    moduleCatalog.AddModule<ModuleAModule>();
+    Debugger.Break();
+}
+```
 - Now run the app. Notive that the break points in the module shon above were hit.
