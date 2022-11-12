@@ -1,12 +1,9 @@
-﻿using Prism.DryIoc;
+﻿using ModuleA;
+using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Modularity;
 using SimplePrismShell.Views;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows;
 
 namespace SimplePrismShell
@@ -25,5 +22,13 @@ namespace SimplePrismShell
         {
 
         }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            Debugger.Break();
+            moduleCatalog.AddModule<ModuleAModule>();
+            Debugger.Break();
+        }
+
     }
 }

@@ -11,3 +11,24 @@
 - Remove AssemblyInfo file and UserControl1 as well. They are not needed.
 - Add two folders Views and ViewModels
 - Add a nuget Prism.Wpf package to this module project
+- Create the actual module class, that is a class implimenting IModule.
+
+
+```cs
+public class ModuleAModule : IModule
+{
+    public void OnInitialized(IContainerProvider containerProvider)
+    {
+        // throw new NotImplementedException();
+        Debugger.Break();
+    }
+    public void RegisterTypes(IContainerRegistry containerRegistry)
+    {
+        Debugger.Break();
+        // throw new NotImplementedException();
+    }
+}
+```
+
+- Now add reference to the module class library. 
+- Now run the app. Notive that the break points in the module shon above were hit.
