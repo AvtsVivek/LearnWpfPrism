@@ -23,3 +23,5 @@ And add the required namespace.
 xmlns:prism="http://prismlibrary.com/"
 ```
 
+- So by this, the ContentControl becomes a prism region.
+- Note that a View is not Yet injected into the region. 
