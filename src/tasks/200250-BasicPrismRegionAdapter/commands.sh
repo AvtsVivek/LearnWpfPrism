@@ -1,6 +1,6 @@
 cd ../../..
 
-cd src/tasks/200225-BasicPrismRegion
+cd src/tasks/200250-BasicPrismRegionAdapter
 
-cd src/apps/200225-BasicPrismRegion
+cd src/apps/200250-BasicPrismRegionAdapter
 
