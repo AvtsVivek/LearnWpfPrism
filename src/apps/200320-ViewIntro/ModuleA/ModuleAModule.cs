@@ -1,5 +1,7 @@
-﻿using Prism.Ioc;
+﻿using ModuleA.Views;
+using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,16 +13,21 @@ namespace ModuleA
 {
     public class ModuleAModule : IModule
     {
+        private readonly IRegionManager _regionManager;
+
+        public ModuleAModule(IRegionManager regionManager)
+        {
+            _regionManager = regionManager;
+        }
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            // throw new NotImplementedException();
-            Debugger.Break();
+            // The OnInitialized method will guarantee that the shell has been loaded and that the region has been created at this point
+            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            Debugger.Break();
-            // throw new NotImplementedException();
+
         }
     }
 }

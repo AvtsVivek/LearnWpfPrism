@@ -25,9 +25,7 @@ namespace SimplePrismShell
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
-            Debugger.Break();
             moduleCatalog.AddModule<ModuleAModule>();
-            Debugger.Break();
         }
 
     }
