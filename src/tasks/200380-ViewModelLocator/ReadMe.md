@@ -38,4 +38,5 @@ prism:ViewModelLocator.AutoWireViewModel="True"
 
 - Now ruin the app. You should see **Hello from ViewAViewModel** 
 - Try making AutoWireViewModel property above to false and then run again. This time it will be blank.
+- So the view model locator is true means, prism created an intance of ViewModel, then assigned to the datacontext of view.
 
