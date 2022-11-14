@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
+using SimplePrismShell.Core.Commands;
 
 namespace ModuleA.ViewModels
 {
@@ -34,9 +35,12 @@ namespace ModuleA.ViewModels
 
         public DelegateCommand UpdateCommand { get; private set; }
 
-        public TabViewModel()
+        public TabViewModel(IApplicationCommands applicationCommands)
         {
             UpdateCommand = new DelegateCommand(Update).ObservesCanExecute(() => CanUpdate);
+
+            applicationCommands.SaveAllCommand.RegisterCommand(UpdateCommand);
+            // HJere we are regeisring. But for any reason, if we are removing a tab, then we must also remember to un register as well.
         }
 
         private void Update()

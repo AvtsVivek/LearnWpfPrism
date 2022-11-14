@@ -9,5 +9,9 @@
 	  <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
+	
+	  <ItemGroup>
+	    <ProjectReference Include="..\SimplePrismShell.Core\SimplePrismShell.Core.csproj" />
+	  </ItemGroup>
 
 </Project>

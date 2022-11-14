@@ -6,6 +6,8 @@
         xmlns:local="clr-namespace:SimplePrismShell.Views"
         mc:Ignorable="d"
         xmlns:prism="http://prismlibrary.com/"
+
+        prism:ViewModelLocator.AutoWireViewModel="True"
         Title="ShellWindow" Height="450" Width="800">
     
     <Window.Resources>
@@ -20,7 +22,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Button Content="Save All" Margin="10" />
+        <Button Content="Save All" Margin="10" Command="{Binding ApplicationCommands.SaveAllCommand}" />
 
         <TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="ContentRegion" />
     </Grid>

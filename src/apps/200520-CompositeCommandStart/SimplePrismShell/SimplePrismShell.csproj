@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ModuleA\ModuleA.csproj" />
-    <ProjectReference Include="..\SimplePrismShell.Core\SimplePrismShell.Core.csproj" />
   </ItemGroup>
 
 </Project>
