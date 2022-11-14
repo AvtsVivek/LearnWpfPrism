@@ -28,7 +28,7 @@ namespace ModuleA.ViewModels
 
         public ViewAViewModel()
         {
-            ClickCommand = new DelegateCommand(ButtonClick, CanButtonClick);
+            ClickCommand = new DelegateCommand(ButtonClick, CanButtonClick).ObservesProperty(() => CanExecute);
         }
 
         private bool CanButtonClick()
