@@ -41,4 +41,5 @@ public TabViewModel(IApplicationCommands applicationCommands)
 ``` 
 
 - So we are registering the delegate command from the tab view model to the composite command. 
+- Here we are regeisring. But for any reason, if we are removing a tab, then we must also remember to un register as well.
 - So now run the app. We can hit Tab A, Tab B, Tab C. Save them individually if we like. But, look what if we click the Save All command now. We can see that all are Updated to same date and time, Tab B, same, Tab C, same. We have successfully used the CompositeCommand to save all three of these tabs at the same time. Also, note if just one of these RegisterCommands CanExecute returns false, then the CompositeCommand CanExecute returns false, and you can no longer invoke the CompositeCommand. However, we could still save the individual tabs individually. But if all of the CanExecutes of all the RegisterCommands return true, then the CompositeCommand CanExecute returns true, and we can then again use the CompositeCommand
