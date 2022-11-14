@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Prism.Commands;
 using Prism.Mvvm;
-using SimplePrismShell.Core.Commands;
 
 namespace ModuleA.ViewModels
 {
@@ -35,11 +34,9 @@ namespace ModuleA.ViewModels
 
         public DelegateCommand UpdateCommand { get; private set; }
 
-        public TabViewModel(IApplicationCommands applicationCommands)
+        public TabViewModel()
         {
             UpdateCommand = new DelegateCommand(Update).ObservesCanExecute(() => CanUpdate);
-
-            applicationCommands.SaveAllCommand.RegisterCommand(UpdateCommand);
         }
 
         private void Update()
