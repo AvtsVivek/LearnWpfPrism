@@ -20,9 +20,7 @@ namespace ModuleA.ViewModels
             get { return _canExecute; }
             set { 
                 SetProperty(ref _canExecute, value); 
-                // Run and rerun the app after commenting and uncommenting the following line.
                 Debugger.Break();
-                ClickCommand.RaiseCanExecuteChanged();
             }
         }
 

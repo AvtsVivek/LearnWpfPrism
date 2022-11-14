@@ -21,8 +21,7 @@ public bool CanExecute
 {
     get { return _canExecute; }
     set { 
-        SetProperty(ref _canExecute, value); 
-        // ClickCommand.RaiseCanExecuteChanged();
+        SetProperty(ref _canExecute, value);
     }
 }
 ```
@@ -38,5 +37,11 @@ private bool CanButtonClick()
 }
 ```
 
-- Now run the app and note how the button is disabled from the biginning. Check the checkbox, to see if this changes. Comment and uncomment ClickCommand.RaiseCanExecuteChanged method and see the behavior change.
+- Call observesPropery method to the DelegateCommand object as follows.
+
+```cs
+ClickCommand = new DelegateCommand(ButtonClick, CanButtonClick).ObservesProperty(() => CanExecute);
+```
+
+- Now run the app and note how the button is disabled from the biginning. Check the checkbox, to see if this changes. 
 - 
