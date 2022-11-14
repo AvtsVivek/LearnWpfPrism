@@ -2,7 +2,11 @@
 - This builds on earlier example.
 - View model locator with a differnet naming conventions.
 - Create a contols folder in the ModuleA project, then add a ControlA UserControl.
-- In the App.xaml.cs file of the SimplePrismShell project, override the method, ConfigureViewModelLocator
+- So here there is Controls folder instead of Views folder. This is againest the conventions.
+- So auto wiring does not work.
+- So we need to setup the convetions explicitly. 
+- 
+- In the App.xaml.cs file of the SimplePrismShell project, override the method, ConfigureViewModelLocator.
 
 ```cs
 protected override void ConfigureViewModelLocator()
