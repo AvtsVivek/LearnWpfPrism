@@ -1,5 +1,6 @@
 using Prism.Commands;
 using Prism.Mvvm;
+using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace ModuleA.ViewModels
@@ -13,6 +14,18 @@ namespace ModuleA.ViewModels
             set { SetProperty(ref _welcomeMessage, value); }
         }
 
+        private bool _canExecute;
+        public bool CanExecute
+        {
+            get { return _canExecute; }
+            set { 
+                SetProperty(ref _canExecute, value); 
+                // Run and rerun the app after commenting and uncommenting the following line.
+                Debugger.Break();
+                ClickCommand.RaiseCanExecuteChanged();
+            }
+        }
+
         public DelegateCommand ClickCommand { get; set; }
 
         public ViewAViewModel()
@@ -22,7 +35,8 @@ namespace ModuleA.ViewModels
 
         private bool CanButtonClick()
         {
-            return true;
+            Debugger.Break();
+            return CanExecute;
         }
 
         private void ButtonClick()
