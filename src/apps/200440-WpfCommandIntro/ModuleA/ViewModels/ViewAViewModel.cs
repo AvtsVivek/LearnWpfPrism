@@ -17,15 +17,15 @@ namespace ModuleA.ViewModels
 
         public ViewAViewModel()
         {
-            ClickCommand = new DelegateCommand(Click, CanClick);
+            ClickCommand = new DelegateCommand(ButtonClick, CanButtonClick);
         }
 
-        private bool CanClick()
+        private bool CanButtonClick()
         {
             return true;
         }
 
-        private void Click()
+        private void ButtonClick()
         {
             WelcomeMessage = "You Clicked me!";
         }

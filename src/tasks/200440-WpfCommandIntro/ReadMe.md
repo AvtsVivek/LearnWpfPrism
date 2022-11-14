@@ -18,14 +18,23 @@
 public DelegateCommand ClickCommand { get; set; }
 public ViewAViewModel()
 {
-    ClickCommand = new DelegateCommand(Click, CanClick);
+    ClickCommand = new DelegateCommand(ButtonClick, CanButtonClick);
 }
-private bool CanClick()
+private bool CanButtonClick()
 {
     return true;
 }
-private void Click()
+private void ButtonClick()
 {
     WelcomeMessage = "You Clicked me!";
+}
+```
+
+- Now run the app and click the button to see the command in action.
+- Also change the return of the CanClick method to false as follows.
+```cs
+private bool CanButtonClick()
+{
+    return false;
 }
 ```
