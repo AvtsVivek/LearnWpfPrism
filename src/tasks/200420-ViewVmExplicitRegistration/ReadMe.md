@@ -35,3 +35,5 @@ public void RegisterTypes(IContainerRegistry containerRegistry)
     ViewModelLocationProvider.Register<ControlA>(() => new ControlAViewModel() { WelcomeMessage = "Hello from Factory" });
 }
 ```
+
+- Also note that this way of registration does not use reflection, where as the earlier method uses reflection.
