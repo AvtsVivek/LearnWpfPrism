@@ -1,4 +1,6 @@
+using Prism.Commands;
 using Prism.Mvvm;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ModuleA.ViewModels
 {
@@ -10,5 +12,23 @@ namespace ModuleA.ViewModels
             get { return _welcomeMessage; }
             set { SetProperty(ref _welcomeMessage, value); }
         }
+
+        public DelegateCommand ClickCommand { get; set; }
+
+        public ViewAViewModel()
+        {
+            ClickCommand = new DelegateCommand(Click, CanClick);
+        }
+
+        private bool CanClick()
+        {
+            return true;
+        }
+
+        private void Click()
+        {
+            WelcomeMessage = "You Clicked me!";
+        }
+
     }
 }
