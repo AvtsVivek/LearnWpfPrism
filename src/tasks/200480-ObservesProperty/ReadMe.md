@@ -26,7 +26,7 @@ public bool CanExecute
 }
 ```
 
-- Note the **ClickCommand.RaiseCanExecuteChanged();** sitting in the set property.
+- Note the **ClickCommand.RaiseCanExecuteChanged();** is removed from the earlier example.
 
 - We want the button to be clickable only when the checkbox is checked.
 
