@@ -40,6 +40,7 @@ namespace ModuleA.ViewModels
             UpdateCommand = new DelegateCommand(Update).ObservesCanExecute(() => CanUpdate);
 
             applicationCommands.SaveAllCommand.RegisterCommand(UpdateCommand);
+            // HJere we are regeisring. But for any reason, if we are removing a tab, then we must also remember to un register as well.
         }
 
         private void Update()
