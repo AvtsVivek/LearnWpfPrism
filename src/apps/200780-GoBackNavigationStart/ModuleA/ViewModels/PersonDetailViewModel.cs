@@ -1,4 +1,5 @@
 ﻿
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
 
@@ -13,9 +14,11 @@ namespace ModuleA.ViewModels
             set { SetProperty(ref _selectedPerson, value); }
         }
 
+        public DelegateCommand GoBackCommand { get; set; }
+
         public PersonDetailViewModel()
         {
-
+            GoBackCommand = new DelegateCommand(GoBack);
         }
 
         public void OnNavigatedTo(NavigationContext navigationContext)
@@ -30,6 +33,11 @@ namespace ModuleA.ViewModels
         }
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+
+        }
+
+        private void GoBack()
         {
 
         }

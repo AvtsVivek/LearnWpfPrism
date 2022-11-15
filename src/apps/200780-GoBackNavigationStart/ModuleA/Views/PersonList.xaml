@@ -24,6 +24,6 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </ListBox>
-        <TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="PersonDetailsRegion" />
+        <Button Command="{Binding GoForwardCommand}" Grid.Row="1" Margin="10" Width="75">Go Forward</Button>
     </Grid>
 </UserControl>

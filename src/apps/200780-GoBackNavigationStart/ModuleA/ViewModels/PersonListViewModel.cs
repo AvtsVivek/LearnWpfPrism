@@ -17,12 +17,12 @@ namespace ModuleA.ViewModels
             set { SetProperty(ref _people, value); }
         }
 
+        public DelegateCommand GoForwardCommand { get; set; } = default!;
         public DelegateCommand<Person> PersonSelectedCommand { get; private set; }
-
-
 
         public PersonListViewModel(IRegionManager regionManger)
         {
+            GoForwardCommand = new DelegateCommand(GoForward, CanGoForward);
             PersonSelectedCommand = new DelegateCommand<Person>(PersonSelected);
             CreatePeople();
             _regionManger = regionManger;
@@ -36,7 +36,7 @@ namespace ModuleA.ViewModels
             var p = new NavigationParameters();
             p.Add("person", person);
 
-            _regionManger.RequestNavigate("PersonDetailsRegion", "PersonDetail", p);
+            _regionManger.RequestNavigate("ContentRegion", "PersonDetail", p);
         }
 
         //demo code only, use a service in production code
@@ -54,6 +54,16 @@ namespace ModuleA.ViewModels
             }
 
             People = people;
+        }
+
+        private void GoForward()
+        {
+
+        }
+
+        private bool CanGoForward()
+        {
+            return false;
         }
     }
 }
