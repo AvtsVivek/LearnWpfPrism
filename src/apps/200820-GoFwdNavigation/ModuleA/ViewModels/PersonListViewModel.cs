@@ -7,9 +7,10 @@ using System.Collections.ObjectModel;
 
 namespace ModuleA.ViewModels
 {
-    public class PersonListViewModel : BindableBase
+    public class PersonListViewModel : BindableBase, INavigationAware
     {
         private ObservableCollection<Person> _people = default!;
+        private IRegionNavigationJournal _regionNavigationJournal = default!;
         private readonly IRegionManager _regionManger;
         public ObservableCollection<Person> People
         {
@@ -58,12 +59,28 @@ namespace ModuleA.ViewModels
 
         private void GoForward()
         {
-
+            _regionNavigationJournal.GoForward();
         }
 
         private bool CanGoForward()
         {
-            return false;
+            return _regionNavigationJournal != null && _regionNavigationJournal.CanGoForward;
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            _regionNavigationJournal = navigationContext.NavigationService.Journal;
+            GoForwardCommand.RaiseCanExecuteChanged();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
         }
     }
 }
