@@ -1,11 +1,12 @@
-﻿using ModuleA;
+﻿
 using Prism.Mvvm;
+using Prism.Regions;
 
 namespace ModuleA.ViewModels
 {
-    public class PersonDetailViewModel : BindableBase
+    public class PersonDetailViewModel : BindableBase//, INavigationAware
     {
-        private Person _selectedPerson = default!;
+        private Person _selectedPerson;
         public Person SelectedPerson
         {
             get { return _selectedPerson; }
@@ -16,5 +17,21 @@ namespace ModuleA.ViewModels
         {
 
         }
+
+        // public void OnNavigatedTo(NavigationContext navigationContext)
+        // {
+        //     if (navigationContext.Parameters.ContainsKey("person"))
+        //         SelectedPerson = navigationContext.Parameters.GetValue<Person>("person");
+        // }
+
+        // public bool IsNavigationTarget(NavigationContext navigationContext)
+        // {
+        //     return true;
+        // }
+
+        // public void OnNavigatedFrom(NavigationContext navigationContext)
+        // {
+
+        // }
     }
 }

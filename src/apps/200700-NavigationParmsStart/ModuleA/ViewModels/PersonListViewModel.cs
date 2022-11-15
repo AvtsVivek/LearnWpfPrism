@@ -30,13 +30,13 @@ namespace ModuleA.ViewModels
 
         private void PersonSelected(Person person)
         {
-            if (person == null)
-                return;
+            //if (person == null)
+            //    return;
 
-            var p = new NavigationParameters();
-            p.Add("person", person);
+            //var p = new NavigationParameters();
+            //p.Add("person", person);
 
-            _regionManger.RequestNavigate("PersonDetailsRegion", "PersonDetail", p);
+            _regionManger.RequestNavigate("PersonDetailsRegion", "PersonDetail");
         }
 
         //demo code only, use a service in production code
