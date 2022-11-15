@@ -5,7 +5,7 @@ namespace ModuleA.ViewModels
 {
     public class PersonDetailViewModel : BindableBase
     {
-        private Person _selectedPerson;
+        private Person _selectedPerson = default!;
         public Person SelectedPerson
         {
             get { return _selectedPerson; }

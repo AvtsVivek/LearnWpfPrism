@@ -9,7 +9,7 @@ namespace ModuleA.ViewModels
 {
     public class PersonListViewModel : BindableBase
     {
-        private ObservableCollection<Person> _people;
+        private ObservableCollection<Person> _people = default!;
         private readonly IRegionManager _regionManger;
         public ObservableCollection<Person> People
         {
