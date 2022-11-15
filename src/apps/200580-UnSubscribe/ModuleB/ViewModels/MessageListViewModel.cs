@@ -8,17 +8,38 @@ namespace ModuleB.ViewModels
     public class MessageListViewModel : BindableBase
     {
         private ObservableCollection<string> _messages = new ObservableCollection<string>();
+        private MessageSentEvent _event;
         public ObservableCollection<string> Messages
         {
             get { return _messages; }
             set { SetProperty(ref _messages, value); }
         }
 
+        private bool _isSubscribed = true;
+        public bool IsSubscribed
+        {
+            get { return _isSubscribed; }
+            set
+            {
+                SetProperty(ref _isSubscribed, value);
+
+                HandleSubscribe(_isSubscribed);
+            }
+        }
+
         public MessageListViewModel(IEventAggregator eventAggregator)
         {
-            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageReceived);
-            // If you want to add filters to the incomming message, you can do the following.
-            // eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageReceived, ThreadOption.PublisherThread, false, message => message.Contains("Vivek"));
+            _event = eventAggregator.GetEvent<MessageSentEvent>();
+
+            HandleSubscribe(true);
+        }
+
+        void HandleSubscribe(bool isSubscribed)
+        {
+            if (isSubscribed)
+                _event.Subscribe(OnMessageReceived);
+            else
+                _event.Unsubscribe(OnMessageReceived);
         }
 
         private void OnMessageReceived(string message)

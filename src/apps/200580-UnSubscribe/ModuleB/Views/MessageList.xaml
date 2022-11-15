@@ -4,6 +4,11 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True">
     <Grid>
-        <ListBox ItemsSource="{Binding Messages}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CheckBox IsChecked="{Binding IsSubscribed}" Content="Subscribed"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Messages}" />
     </Grid>
 </UserControl>
