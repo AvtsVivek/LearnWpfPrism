@@ -17,6 +17,8 @@ namespace ModuleB.ViewModels
         public MessageListViewModel(IEventAggregator eventAggregator)
         {
             eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageReceived);
+            // If you want to add filters to the incomming message, you can do the following.
+            // eventAggregator.GetEvent<MessageSentEvent>().Subscribe(OnMessageReceived, ThreadOption.PublisherThread, false, message => message.Contains("Vivek"));
         }
 
         private void OnMessageReceived(string message)
