@@ -2,6 +2,7 @@
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
+using SimplePrismShell.Dialogs;
 using SimplePrismShell.Views;
 using System.Diagnostics;
 using System.Windows;
@@ -20,13 +21,12 @@ namespace SimplePrismShell
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterDialog<MessageDialog, MessageDialogViewModel>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<ModuleAModule>();
         }
-
     }
 }
