@@ -5,7 +5,7 @@
 - In ViewA, change the Grid panel to StackPanel, then add button and textblock as follows.
 
 ```xml
-<StackPanel>
+<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
     <TextBlock Text="{Binding WelcomeMessage}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
     <Button Command="{Binding ShowDialogCommand}" Content="Show Dialog" Width="175" Height="85" />
     <TextBlock Text="{Binding MessageReceived}" Margin="10" FontSize="36"/>
