@@ -33,16 +33,11 @@ namespace ModuleA.ViewModels
 
         private void ShowDialog()
         {
-            var dialogParams = new DialogParameters();
-            // In the following the "message" parameter key comes from OnDialogOpened method of the viewmodel of dialog user control
-            dialogParams.Add("message", "Hello from ViewAViewModel");
-
-            _dialogService.ShowDialog("MessageDialog", dialogParams, r =>
+            _dialogService.ShowMessageDialog("Hello from ViewAViewModel", iDialogResult =>
             {
-                if (r.Result == ButtonResult.OK)
+                if (iDialogResult.Result == ButtonResult.OK)
                 {
-                    // Also in the following "myParam" comes from CloseDialog in the view model of dialog user control
-                    MessageReceived = r.Parameters.GetValue<string>("myParam");
+                    MessageReceived = iDialogResult.Parameters.GetValue<string>("myParam");
                 }
                 else
                 {
@@ -51,5 +46,4 @@ namespace ModuleA.ViewModels
             });
         }
     }
-    
 }
