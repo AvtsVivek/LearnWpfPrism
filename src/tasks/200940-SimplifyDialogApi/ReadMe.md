@@ -21,5 +21,19 @@ private void ShowDialog()
 }
 ```
 
+- You can also set the styling of the dialog as follows. 
+- Open the MessageDialog.xaml in the dialog folder. Then you can add the following styles to the dialog.
 
+```xml
+
+<prism:Dialog.WindowStyle>
+    <Style TargetType="Window">
+        <Setter Property="Height" Value="200" />
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+    </Style>
+</prism:Dialog.WindowStyle>
+
+```
 

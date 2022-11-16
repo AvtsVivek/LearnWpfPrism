@@ -12,6 +12,16 @@
 
              
              >
+
+<prism:Dialog.WindowStyle>
+    <Style TargetType="Window">
+        <Setter Property="Height" Value="200" />
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+    </Style>
+</prism:Dialog.WindowStyle>
+
     <Grid x:Name="LayoutRoot" Margin="25">
         <Grid.RowDefinitions>
             <RowDefinition />
