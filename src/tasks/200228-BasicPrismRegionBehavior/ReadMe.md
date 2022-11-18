@@ -1,0 +1,18 @@
+# Basic Prism App
+- Introduces Region Behaviors in Prism App
+
+- Add a class **SimpleRegionBehavior**.
+- Then register in App.xaml.cs class as follows.
+- The following code creates a region in the shell.
+```cs
+protected override void ConfigureDefaultRegionBehaviors(IRegionBehaviorFactory regionBehaviors)
+{
+    base.ConfigureDefaultRegionBehaviors(regionBehaviors);
+    regionBehaviors.AddIfMissing(SimpleRegionBehavior.BehaviorKey, typeof(SimpleRegionBehavior));
+}
+```
+
+- Run the app in visual Studio. Debugger.Break(), will break the app inside of the Attach method. Then it will output some info for you.
+- In Visual Studio 2022, open the output window, View -> Output(Ctrl + Alt + O).
+![Choose Prism Template](./images/20OuputWindowShowingRegionData20.jpg)
+- 
