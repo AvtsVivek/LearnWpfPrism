@@ -32,5 +32,5 @@ protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings reg
 }
 ```
 - Basically with the above code, we are letting know of the prism about the stackpanel adapter that we created. In other words we are regitering the new adapter with the prism infrastructure. 
-- With these two additions, if you now run, there would be an excption. Comment out the above method ConfigureRegionAdapterMappings and run to see the exception. 
+- Without these two additions, if you now run, there would be an excption. Comment out the above method ConfigureRegionAdapterMappings and run to see the exception. 
 - 
