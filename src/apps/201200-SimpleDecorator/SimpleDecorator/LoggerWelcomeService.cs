@@ -23,24 +23,4 @@ namespace SimpleDecorator
         }
     }
 
-    //public class LoggingHandlerDecorator : IHandler
-    //{
-    //    private readonly IHandler _handler;
-    //    public readonly ILogger Logger;
-
-    //    public LoggingHandlerDecorator(IHandler handler, ILogger logger)
-    //    {
-    //        _handler = handler;
-    //        Logger = logger;
-    //    }
-
-    //    public bool IsHandled => _handler.IsHandled;
-
-    //    public void Handle()
-    //    {
-    //        Logger.Log("About to handle");
-    //        _handler.Handle();
-    //        Logger.Log("Successfully handled");
-    //    }
-    //}
 }
