@@ -1,15 +1,11 @@
-﻿using ModuleA.ViewModels;
+﻿using DryIoc;
 using ModuleA.Views;
+using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
-using Prism.Regions;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
+using SimpleContract;
+using SimpleDecorator;
+using SimpleServices;
 
 namespace ModuleA
 {
@@ -23,7 +19,12 @@ namespace ModuleA
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewA>();
-            containerRegistry.RegisterForNavigation<ViewB>();
+
+            var container = PrismIocExtensions.GetContainer(containerRegistry);
+
+            container.Register<IWelcomeService, WelcomeService>();
+            container.Register<ILogger, InMemoryLogger>();
+            container.Register<IWelcomeService, LoggerWelcomeService>(setup: Setup.Decorator);
         }
     }
 }
