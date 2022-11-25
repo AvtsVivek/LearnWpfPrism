@@ -10,3 +10,5 @@
 ## Pre Reqs
 - Visual STudio 2022, V17.4.0 or above. This update is necessary because this installs .net 7. And the examples here are with .net 7 and not .net 6.
 - [Prism Template Pack extension](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack).
+
+https://stackoverflow.com/questions/61762323/registering-a-decorated-type-in-a-prism-app-di-container
