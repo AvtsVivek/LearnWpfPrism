@@ -1,8 +1,8 @@
 # Basic Prism App
 - Introduces Region Behaviors in Prism App
 
-- Add a class **SimpleRegionBehavior**.
-- Then register in App.xaml.cs class as follows.
+- Add a class **SimpleRegionBehavior**. Derive it from RegionBehavior
+- Then register this behavior with the prism in App.xaml.cs class as follows.
 - The following code creates a region in the shell.
 ```cs
 protected override void ConfigureDefaultRegionBehaviors(IRegionBehaviorFactory regionBehaviors)
