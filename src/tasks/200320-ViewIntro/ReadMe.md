@@ -36,4 +36,9 @@ public ModuleAModule(IRegionManager regionManager)
 }
 ```
 - Now run the app. You should see the View displayed.
-- 
+- So in summary the following shows how they all fit together.
+  - In App.cs, we have CreateShell method which Creates the shell windows object.
+  - It also has ModuleAModule Registered.
+  - Then in ShellWindow.xaml, you can see the region defined.
+  - Now go to the module, you will see region manager registers the ContentRegion with te View ViewA.
+  -  
