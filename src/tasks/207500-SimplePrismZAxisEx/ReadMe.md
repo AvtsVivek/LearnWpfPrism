@@ -5,4 +5,6 @@
 
 - https://github.com/matthewethomas/CodeProject-DesignTimeRegions
 
-- This is work in progress.
+- Need to raise so issue.
+
+- 
