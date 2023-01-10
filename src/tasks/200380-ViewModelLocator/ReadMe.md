@@ -1,7 +1,7 @@
 # Basic Prism App with Modules
 
 - Introduces Prism's ViewModel Locator
-- This buids from 200320-ViewIntro example.
+- This buids from [200320-ViewIntro](https://github.com/AvtsVivek/LearnWpfPrism/tree/main/src/tasks/200320-ViewIntro) example.
 - An instance of View Model has to be assigned to the view's data context. This is what ViewModel Locator helps achieve.
 - First add a new View Model class in the ViewModels folder of the ModuleA project.
 ```cs
