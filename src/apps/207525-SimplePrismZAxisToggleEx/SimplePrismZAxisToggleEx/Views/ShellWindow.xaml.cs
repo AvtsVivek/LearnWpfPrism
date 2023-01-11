@@ -23,60 +23,24 @@ namespace SimplePrismZAxisToggleEx.Views
         public ShellWindow()
         {
             InitializeComponent();
-            AddElements();
-            
-        }
-        private void AddElements()
-        {
-            //MainGrid.Children.Clear();
-            //var firstRowDefinition = new RowDefinition { Height = GridLength.Auto };
-            //MainGrid.RowDefinitions.Add(firstRowDefinition);
-            //var secondRowDefinition = new RowDefinition { Height = new GridLength(1, GridUnitType.Star) };
-            //MainGrid.RowDefinitions.Add(secondRowDefinition);
-
-            //var button = new Button { Height = 40 };
-            //MainGrid.Children.Add(button);
-            //button.Content = "here we go ...";
-
-            //Grid.SetRow(button, 0);
-
-            var redContentControl = new ContentControl();
-            RegionManager.SetRegionName(redContentControl, "RedRegion");
-            // var redGrid = new Grid();
-            _redGrid.Children.Add(redContentControl);
-
-            MainGrid.Children.Add(_redGrid);
-            Grid.SetRow(_redGrid, 1);
-
-            var greenContentControl = new ContentControl();
-            RegionManager.SetRegionName(greenContentControl, "GreenRegion");
-            //var greenGrid = new Grid();
-            _greenGrid.Children.Add(greenContentControl);
-
-            MainGrid.Children.Add(_greenGrid);
-            
-            Grid.SetRow(_greenGrid, 1);
-
         }
 
-        private Grid _redGrid = new Grid();
-        private Grid _greenGrid = new Grid();
         private bool _toggleRegion = false;
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            MainGrid.Children.Remove(_redGrid);
-            MainGrid.Children.Remove(_greenGrid);
+            MainGrid.Children.Remove(redGrid);
+            MainGrid.Children.Remove(greenGrid);
 
             if (_toggleRegion)
             {
-                MainGrid.Children.Add(_redGrid);
-                MainGrid.Children.Add(_greenGrid);
+                MainGrid.Children.Add(redGrid);
+                MainGrid.Children.Add(greenGrid);
             }
             else
             {
-                MainGrid.Children.Add(_greenGrid);
-                MainGrid.Children.Add(_redGrid);
+                MainGrid.Children.Add(greenGrid);
+                MainGrid.Children.Add(redGrid);
             }
             _toggleRegion = !_toggleRegion;
         }

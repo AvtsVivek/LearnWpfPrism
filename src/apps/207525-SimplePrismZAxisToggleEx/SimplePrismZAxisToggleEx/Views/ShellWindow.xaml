@@ -15,5 +15,11 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Height="40" Name="btn1" Click="btn1_Click" >Here we go</Button>
+        <Grid Grid.Row="1" x:Name="redGrid" >
+            <ContentControl prism:RegionManager.RegionName="RedRegion" />
+        </Grid>
+        <Grid Grid.Row="1" x:Name="greenGrid">
+            <ContentControl prism:RegionManager.RegionName="GreenRegion" />
+        </Grid>
     </Grid>
 </Window>
