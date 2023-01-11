@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SimplePrismZAxisEx.Views
+namespace ModuleRed.Views
 {
     /// <summary>
-    /// Interaction logic for ShellWindow.xaml
+    /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ShellWindow : Window
+    public partial class ViewRed : UserControl
     {
-        public ShellWindow()
+        public ViewRed()
         {
             InitializeComponent();
         }

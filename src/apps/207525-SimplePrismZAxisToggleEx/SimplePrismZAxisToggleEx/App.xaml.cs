@@ -3,11 +3,11 @@ using ModuleRed;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
-using SimplePrismZAxisEx.Views;
+using SimplePrismZAxisToggleEx.Views;
 using System.Diagnostics;
 using System.Windows;
 
-namespace SimplePrismZAxisEx
+namespace SimplePrismZAxisToggleEx
 {
     /// <summary>
     /// Interaction logic for App.xaml
