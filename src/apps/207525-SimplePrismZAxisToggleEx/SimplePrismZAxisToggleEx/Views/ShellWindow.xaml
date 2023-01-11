@@ -9,16 +9,16 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="450" Width="800">
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="_mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Button Height="40" Name="btn1" Click="btn1_Click" >Here we go</Button>
-        <Grid Grid.Row="1" x:Name="redGrid" >
+        <Grid Grid.Row="1" x:Name="_redGrid" >
             <ContentControl prism:RegionManager.RegionName="RedRegion" />
         </Grid>
-        <Grid Grid.Row="1" x:Name="greenGrid">
+        <Grid Grid.Row="1" x:Name="_greenGrid">
             <ContentControl prism:RegionManager.RegionName="GreenRegion" />
         </Grid>
     </Grid>

@@ -29,18 +29,18 @@ namespace SimplePrismZAxisToggleEx.Views
 
         private void btn1_Click(object sender, RoutedEventArgs e)
         {
-            MainGrid.Children.Remove(redGrid);
-            MainGrid.Children.Remove(greenGrid);
+            _mainGrid.Children.Remove(_redGrid);
+            _mainGrid.Children.Remove(_greenGrid);
 
             if (_toggleRegion)
             {
-                MainGrid.Children.Add(redGrid);
-                MainGrid.Children.Add(greenGrid);
+                _mainGrid.Children.Add(_redGrid);
+                _mainGrid.Children.Add(_greenGrid);
             }
             else
             {
-                MainGrid.Children.Add(greenGrid);
-                MainGrid.Children.Add(redGrid);
+                _mainGrid.Children.Add(_greenGrid);
+                _mainGrid.Children.Add(_redGrid);
             }
             _toggleRegion = !_toggleRegion;
         }
