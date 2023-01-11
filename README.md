@@ -1,7 +1,8 @@
 # LearnWpfPrism
 - A repo to learn Wpf Prism Library
 
-
+## Give a Star! :star:
+If you like or find this project useful for learning, please consider giving it a star. Thanks!
 
 ## Introduction
 - This is based on the pluralsight course [Intro to Prism 7 for WPF](https://app.pluralsight.com/library/courses/prism-wpf-introduction/table-of-contents)
