@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Button Height="40" Name="btn1" Click="btn1_Click" >Here we go</Button>
+        <Button Height="40" Name="btn1" Click="btn1_Click" >Click me</Button>
         <Grid Grid.Row="1" x:Name="_redGrid" >
             <ContentControl prism:RegionManager.RegionName="RedRegion" />
         </Grid>
