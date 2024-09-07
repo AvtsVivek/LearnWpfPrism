@@ -13,3 +13,14 @@ If you like or find this project useful for learning, please consider giving it 
 - [Prism Template Pack extension](https://marketplace.visualstudio.com/items?itemName=BrianLagunas.PrismTemplatePack).
 
 https://stackoverflow.com/questions/61762323/registering-a-decorated-type-in-a-prism-app-di-container
+
+## References
+
+1. https://github.com/AvtsVivek/IntroToWpf
+
+2. https://github.com/AvtsVivek/PlWpfWiredBrainCoffee
+
+3. https://github.com/AvtsVivek/WpfKogitoDmn
+
+4. https://github.com/AvtsVivek/DecoratorsForCcc/tree/main
+
