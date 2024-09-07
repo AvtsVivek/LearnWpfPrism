@@ -24,3 +24,5 @@ https://stackoverflow.com/questions/61762323/registering-a-decorated-type-in-a-p
 
 4. https://github.com/AvtsVivek/DecoratorsForCcc/tree/main
 
+5. https://github.com/AvtsVivek/NoesisWpf/
+
